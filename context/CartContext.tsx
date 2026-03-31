@@ -1,5 +1,5 @@
 "use client";
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, { createContext, useContext, useState, ReactNode, useEffect } from "react";
 import { ProdutoLoja } from "../Data/Produtos";
 
 type CartItem = ProdutoLoja & { quantity: number };
@@ -10,12 +10,14 @@ interface CartContextType {
   removeFromCart: (id: number) => void;
   totalItems: number;
   totalPrice: number;
+  showToast: boolean;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [cart, setCart] = useState<CartItem[]>([]);
+  const [showToast, setShowToast] = useState(false);
 
   const addToCart = (product: ProdutoLoja) => {
     setCart((prev) => {
@@ -27,6 +29,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
       }
       return [...prev, { ...product, quantity: 1 }];
     });
+    
+    // Efeito de Toast (aviso de sucesso)
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 2500);
   };
 
   const removeFromCart = (id: number) => {
@@ -37,7 +43,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const totalPrice = cart.reduce((sum, item) => sum + item.preco * item.quantity, 0);
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, totalItems, totalPrice }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, totalItems, totalPrice, showToast }}>
       {children}
     </CartContext.Provider>
   );
