@@ -1,6 +1,5 @@
 "use client";
 import React, { createContext, useContext, useState, ReactNode } from "react";
-// Importando com o D maiúsculo como está na sua pasta
 import { ProdutoLoja } from "../Data/Produtos";
 
 type CartItem = ProdutoLoja & { quantity: number };
