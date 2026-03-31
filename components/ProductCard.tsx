@@ -16,45 +16,57 @@ export default function ProductCard({ product }: Props) {
 
   // Mensagem automática para o WhatsApp
   const mensagemZap = encodeURIComponent(
-    `Olá! Tenho interesse no produto: ${product.nome} (${precoFormatado}) que vi no site.`
+    `Olá Emerson! Vi o catálogo e tenho interesse no produto: ${product.nome} (${precoFormatado}).`
   );
   
-  // Substitua o número abaixo pelo do Emerson
+  // Link para o WhatsApp (Altere o número 5585... para o real do Emerson)
   const linkZap = `https://wa.me/5585999999999?text=${mensagemZap}`;
 
   return (
-    <div className="group relative bg-[#0a0a0a] border border-neutral-900 rounded-xl overflow-hidden transition-all duration-300 hover:border-[#b59410]/50 hover:shadow-[0_0_20px_rgba(181,148,16,0.1)]">
+    <div className="group relative bg-[#0a0a0a] border border-neutral-900 rounded-2xl overflow-hidden transition-all duration-300 hover:border-[#b59410]/50 hover:shadow-[0_0_25px_rgba(181,148,16,0.15)] flex flex-col h-full">
       
-      {/* Imagem do Produto */}
-      <div className="aspect-square w-full overflow-hidden bg-neutral-900">
+      {/* Container da Imagem */}
+      <div className="aspect-square w-full overflow-hidden bg-neutral-950 flex items-center justify-center relative">
+        {/* Overlay sutil para dar profundidade */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        
         <img
           src={product.imagem}
           alt={product.nome}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          loading="lazy"
         />
       </div>
 
-      {/* Info do Produto */}
-      <div className="p-4">
-        <span className="text-[10px] uppercase tracking-widest text-[#b59410] font-bold">
-          {product.categoria}
-        </span>
-        <h3 className="mt-1 text-sm font-medium text-white truncate">
+      {/* Detalhes do Produto */}
+      <div className="p-5 flex flex-col flex-grow">
+        <div className="flex items-center gap-2 mb-2">
+           <span className="w-2 h-2 rounded-full bg-[#b59410]"></span>
+           <span className="text-[10px] uppercase tracking-[0.2em] text-neutral-400 font-bold">
+            {product.categoria}
+          </span>
+        </div>
+
+        <h3 className="text-sm font-semibold text-white group-hover:text-[#b59410] transition-colors line-clamp-1">
           {product.nome}
         </h3>
-        <p className="mt-2 text-lg font-black text-white">
-          {precoFormatado}
-        </p>
+        
+        <div className="flex-grow"></div>
 
-        {/* Botão de Compra */}
-        <a
-          href={linkZap}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-4 flex items-center justify-center w-full bg-white text-black py-2.5 rounded-lg text-xs font-bold uppercase tracking-tighter transition-colors hover:bg-[#b59410] hover:text-white"
-        >
-          Pedir no WhatsApp
-        </a>
+        <div className="mt-4 flex flex-col gap-4">
+          <p className="text-xl font-extrabold text-white">
+            {precoFormatado}
+          </p>
+
+          <a
+            href={linkZap}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-full bg-white text-black py-3 rounded-xl text-[11px] font-black uppercase tracking-widest transition-all duration-300 hover:bg-[#b59410] hover:text-white active:scale-95"
+          >
+            Falar com Vendedor
+          </a>
+        </div>
       </div>
     </div>
   );
