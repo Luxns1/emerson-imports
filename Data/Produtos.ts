@@ -1,64 +1,55 @@
 // Data/Produtos.ts
 "use client";
 
-// Define a estrutura de um produto (Tipo)
 export type ProdutoLoja = {
   id: number;
   nome: string;
   preco: number;
   categoria: string;
-  imagem: string; // O link da imagem coerente do Unsplash
+  imagem: string; 
 };
 
-// --- BANCO DE DADOS COM PRODUTOS EM PT-BR E IMAGENS COERENTES ---
-// Usando Unsplash para garantir fotos de alta qualidade e temas corretos.
 export const Produtos: ProdutoLoja[] = [
   {
     id: 1,
-    nome: "Camiseta Oversized Streetwear Preta",
+    nome: "Camiseta Streetwear Oversized Preta",
     preco: 180.00,
     categoria: "Camisetas",
-    // Busca uma imagem de alta qualidade de uma camiseta preta
-    imagem: "https://source.unsplash.com/random/600x600?tshirt,black,streetwear", 
+    imagem: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=600&auto=format&fit=crop", 
   },
   {
     id: 2,
-    nome: "Tênis Casual Premium Branco",
+    nome: "Tênis Air Jordan Style Luxo",
     preco: 850.00,
     categoria: "Calçados",
-    // Busca uma imagem de alta qualidade de um tênis branco
-    imagem: "https://source.unsplash.com/random/600x600?sneaker,white,fashion", 
+    imagem: "https://images.unsplash.com/photo-1552346154-21d32810aba3?q=80&w=600&auto=format&fit=crop", 
   },
   {
     id: 3,
-    nome: "Moletom Tech Fleece Canguru Preto",
+    nome: "Conjunto Moletom Tech Fleece",
     preco: 450.00,
     categoria: "Conjuntos",
-    // Busca uma imagem de alta qualidade de um moletom
-    imagem: "https://source.unsplash.com/random/600x600?hoodie,black,clothing", 
+    imagem: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=600&auto=format&fit=crop", 
   },
   {
     id: 4,
-    nome: "Boné Aba Curva Snapback Preto",
+    nome: "Boné Snapback Classic Black",
     preco: 120.00,
     categoria: "Acessórios",
-    // Busca uma imagem de alta qualidade de um boné
-    imagem: "https://source.unsplash.com/random/600x600?cap,black,hat", 
+    imagem: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?q=80&w=600&auto=format&fit=crop", 
   },
   {
     id: 5,
-    nome: "Regata Estonada Vintage Gym",
-    preco: 155.00,
-    categoria: "Camisetas",
-    // Busca uma imagem de alta qualidade de uma regata
-    imagem: "https://source.unsplash.com/random/600x600?tanktop,clothing,fitness", 
+    nome: "Tênis Sneaker Cano Alto",
+    preco: 590.00,
+    categoria: "Calçados",
+    imagem: "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=600&auto=format&fit=crop", 
   },
   {
     id: 6,
-    nome: "Sneaker Cano Alto Retro",
-    preco: 590.00,
-    categoria: "Calçados",
-    // Busca uma imagem de alta qualidade de um tênis retro cano alto
-    imagem: "https://source.unsplash.com/random/600x600?retro,sneaker,high-top", 
+    nome: "Camiseta Vintage Estonada",
+    preco: 165.00,
+    categoria: "Camisetas",
+    imagem: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=600&auto=format&fit=crop", 
   }
 ];
