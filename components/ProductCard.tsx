@@ -25,8 +25,8 @@ export default function ProductCard({ product }: Props) {
   return (
     <div className="group relative bg-[#0a0a0a] border border-neutral-900 rounded-2xl overflow-hidden transition-all duration-300 hover:border-[#b59410]/50 hover:shadow-[0_0_25px_rgba(181,148,16,0.15)] flex flex-col h-full">
       
-      {/* Container da Imagem */}
-      <div className="aspect-square w-full overflow-hidden bg-neutral-950 flex items-center justify-center relative">
+      {/* Container da Imagem com Visual Luxo */}
+      <div className="aspect-square w-full overflow-hidden bg-neutral-950 flex items-center justify-center relative border-b border-neutral-900">
         {/* Overlay sutil para dar profundidade no hover */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         

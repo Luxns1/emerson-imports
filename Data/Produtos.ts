@@ -7,56 +7,58 @@ export type ProdutoLoja = {
   nome: string;
   preco: number;
   categoria: string;
-  imagem: string; // O link da imagem genérica temática
+  imagem: string; // O link da imagem coerente do Unsplash
 };
 
-// --- BANCO DE DADOS COM PRODUTOS EM PT-BR E IMAGENS TEMÁTICAS ---
-// Usando o Lorem Picsum com sementes temáticas para garantir a coerência.
+// --- BANCO DE DADOS COM PRODUTOS EM PT-BR E IMAGENS COERENTES ---
+// Usando Unsplash para garantir fotos de alta qualidade e temas corretos.
 export const Produtos: ProdutoLoja[] = [
   {
     id: 1,
     nome: "Camiseta Oversized Streetwear Preta",
     preco: 180.00,
     categoria: "Camisetas",
-    // Gera uma imagem aleatória, mas sempre focada em "shirt" (camiseta)
-    imagem: "https://picsum.photos/seed/emerson_shirt_black/600/600?clothing=shirt", 
+    // Busca uma imagem de alta qualidade de uma camiseta preta
+    imagem: "https://source.unsplash.com/random/600x600?tshirt,black,streetwear", 
   },
   {
     id: 2,
     nome: "Tênis Casual Premium Branco",
     preco: 850.00,
     categoria: "Calçados",
-    // Gera uma imagem aleatória, mas sempre focada em "shoes" (tênis)
-    imagem: "https://picsum.photos/seed/emerson_shoes_white/600/600?footwear=shoes", 
+    // Busca uma imagem de alta qualidade de um tênis branco
+    imagem: "https://source.unsplash.com/random/600x600?sneaker,white,fashion", 
   },
   {
     id: 3,
-    nome: "Conjunto Moletom Tech Fleece Cinza",
+    nome: "Moletom Tech Fleece Canguru Preto",
     preco: 450.00,
     categoria: "Conjuntos",
-    // Gera uma imagem de vestuário completo
-    imagem: "https://picsum.photos/seed/emerson_outfit_grey/600/600?fashion=outfit", 
+    // Busca uma imagem de alta qualidade de um moletom
+    imagem: "https://source.unsplash.com/random/600x600?hoodie,black,clothing", 
   },
   {
     id: 4,
     nome: "Boné Aba Curva Snapback Preto",
     preco: 120.00,
     categoria: "Acessórios",
-    // Gera uma imagem focada em acessórios de cabeça
-    imagem: "https://picsum.photos/seed/emerson_hat_black/600/600?accessory=hat", 
+    // Busca uma imagem de alta qualidade de um boné
+    imagem: "https://source.unsplash.com/random/600x600?cap,black,hat", 
   },
   {
     id: 5,
-    nome: "Camiseta Estonada Vintage",
-    preco: 195.00,
+    nome: "Regata Estonada Vintage Gym",
+    preco: 155.00,
     categoria: "Camisetas",
-    imagem: "https://picsum.photos/seed/emerson_shirt_vintage/600/600?clothing=shirt", 
+    // Busca uma imagem de alta qualidade de uma regata
+    imagem: "https://source.unsplash.com/random/600x600?tanktop,clothing,fitness", 
   },
   {
     id: 6,
-    nome: "Tênis Cano Alto Skateboard",
+    nome: "Sneaker Cano Alto Retro",
     preco: 590.00,
     categoria: "Calçados",
-    imagem: "https://picsum.photos/seed/emerson_shoes_skate/600/600?footwear=shoes", 
+    // Busca uma imagem de alta qualidade de um tênis retro cano alto
+    imagem: "https://source.unsplash.com/random/600x600?retro,sneaker,high-top", 
   }
 ];
