@@ -10,23 +10,30 @@ export interface ProdutoLoja {
 export const Produtos: ProdutoLoja[] = [
   {
     id: 1,
-    nome: "Nike Dunk Low Retro Panda",
-    preco: 899.90,
-    categoria: "Calçados",
-    imagem: "https://static.nike.com/a/images/t_PDP_640_v1/f_auto,q_auto:eco/b7d9211c-26e7-431a-ac24-b0540fb3c00f/AIR+JORDAN+1+LOW.png",
-  },
-  {
-    id: 2,
-    nome: "Camiseta Oversized Street Black",
-    preco: 159.90,
-    categoria: "Roupas",
+    nome: "Camiseta Streetwear Oversized Preta",
+    preco: 180.00,
+    categoria: "Camisetas",
     imagem: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=80&auto=format&fit=crop", 
   },
   {
+    id: 2,
+    nome: "Tênis Air Jordan Style Luxo",
+    preco: 850.00,
+    categoria: "Calçados",
+    imagem: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=800&q=80&auto=format&fit=crop",
+  },
+  {
     id: 3,
-    nome: "Moletom Essential Gold Edition",
-    preco: 349.90,
-    categoria: "Roupas",
+    nome: "Conjunto Moletom Tech Fleece",
+    preco: 450.00,
+    categoria: "Conjuntos",
     imagem: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80&auto=format&fit=crop",
+  },
+  {
+    id: 4,
+    nome: "Boné Snapback Classic Black",
+    preco: 120.00,
+    categoria: "Acessórios",
+    imagem: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=800&q=80&auto=format&fit=crop",
   }
 ];
