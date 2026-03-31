@@ -11,7 +11,6 @@ export default function ProductCard({ product, index }: { product: ProdutoLoja, 
         <img 
           src={product.imagem} 
           alt={product.nome}
-          // 'eager' força o navegador a baixar AGORA, não depois.
           loading="eager" 
           fetchPriority={index < 4 ? "high" : "low"}
           decoding="sync" 
@@ -19,7 +18,7 @@ export default function ProductCard({ product, index }: { product: ProdutoLoja, 
         />
       </div>
 
-      <div className="p-6 flex flex-col flex-grow">
+      <div className="p-6 flex flex-col flex-grow text-left">
         <span className="text-[10px] uppercase tracking-widest text-[#b59410] font-bold mb-2 italic">
           ● {product.categoria}
         </span>
@@ -32,7 +31,7 @@ export default function ProductCard({ product, index }: { product: ProdutoLoja, 
           onClick={() => addToCart(product)}
           className="w-full bg-white text-black py-3 rounded-lg text-[11px] font-black uppercase tracking-tighter hover:bg-[#b59410] transition-all active:scale-95"
         >
-          Adicionar à Sacola
+          Falar com Vendedor
         </button>
       </div>
     </div>
