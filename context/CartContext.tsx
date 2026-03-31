@@ -1,5 +1,5 @@
 "use client";
-import React, { createContext, useContext, useState, ReactNode, useEffect } from "react";
+import React, { createContext, useContext, useState, ReactNode } from "react";
 import { ProdutoLoja } from "../Data/Produtos";
 
 type CartItem = ProdutoLoja & { quantity: number };
@@ -29,10 +29,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
       }
       return [...prev, { ...product, quantity: 1 }];
     });
-    
-    // Efeito de Toast (aviso de sucesso)
     setShowToast(true);
-    setTimeout(() => setShowToast(false), 2500);
+    setTimeout(() => setShowToast(false), 2000);
   };
 
   const removeFromCart = (id: number) => {
