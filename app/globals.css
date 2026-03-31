@@ -10,20 +10,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: black;
-}
-
-/* Scrollbar estilizada (opcional) */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #111;
-}
-::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #b59410;
+  background: rgb(var(--background-start-rgb));
+  margin: 0;
+  padding: 0;
 }
