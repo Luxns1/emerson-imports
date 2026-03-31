@@ -4,11 +4,10 @@
 import { useState } from "react";
 import { Produtos } from "../Data/Produtos"; 
 import ProductCard from "../components/ProductCard";
+import WhatsappFloat from "@/components/WhatsappFloat";
 
 export default function Home() {
   const [categoriaAtiva, setCategoriaAtiva] = useState("Tudo");
-
-  // Gera a lista de filtros dinamicamente
   const categorias = ["Tudo", ...new Set(Produtos.map((p) => p.categoria))];
 
   const produtosFiltrados = categoriaAtiva === "Tudo" 
@@ -50,7 +49,7 @@ export default function Home() {
           ))}
         </nav>
 
-        {/* Grid de Itens */}
+        {/* Grid de Produtos */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-10">
           {produtosFiltrados.map((item) => (
             <ProductCard key={item.id} product={item} />
@@ -63,6 +62,9 @@ export default function Home() {
           </p>
         </footer>
       </div>
+
+      {/* --- O BOTÃO FLUTUANTE FICA AQUI --- */}
+      <WhatsappFloat />
     </main>
   );
 }
