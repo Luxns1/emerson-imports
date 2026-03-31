@@ -13,7 +13,6 @@ export const Produtos: ProdutoLoja[] = [
     nome: "Camiseta Streetwear Oversized Preta",
     preco: 180.00,
     categoria: "Camisetas",
-    // Link otimizado para carregar instantaneamente (600px de largura)
     imagem: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&auto=format&q=80", 
   },
   {
