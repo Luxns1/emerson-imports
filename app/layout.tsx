@@ -1,8 +1,8 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Emerson Imports | Premium",
-  description: "O melhor em importados em Fortaleza",
+  title: "Emerson Imports",
+  description: "Luxury Streetwear",
 };
 
 export default function RootLayout({
@@ -11,10 +11,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-br">
-      <body className="bg-black text-white">
-        {/* O 'children' aqui é a sua Page.tsx, sem frescuras de flex ou h-full */}
-        {children}
+    <html lang="pt-br" className="black">
+      <body className="bg-black text-white antialiased">
+        {/* Trava global de largura para o site não explodir no monitor */}
+        <div className="min-h-screen w-full overflow-x-hidden">
+          {children}
+        </div>
       </body>
     </html>
   );
