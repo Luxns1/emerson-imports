@@ -1,22 +1,21 @@
 "use client";
-import { useState } from "react";
 import { ProdutoLoja } from "../Data/Produtos";
 import { useCart } from "../context/CartContext";
 
 export default function ProductCard({ product, index }: { product: ProdutoLoja, index: number }) {
   const { addToCart } = useCart();
-  const [loading, setLoading] = useState(true);
 
   return (
-    <div className="group bg-[#0a0a0a] border border-neutral-900 rounded-[1rem] overflow-hidden flex flex-col h-full transition-all duration-500 hover:border-[#b59410]/50 shadow-2xl">
+    <div className="group bg-[#0a0a0a] border border-neutral-900 rounded-[1rem] overflow-hidden flex flex-col h-full transition-all duration-300 hover:border-[#b59410]/50 shadow-2xl">
       <div className="aspect-square relative bg-neutral-950 overflow-hidden">
-        {loading && <div className="absolute inset-0 bg-neutral-900 animate-pulse z-10" />}
         <img 
           src={product.imagem} 
           alt={product.nome}
-          loading={index < 4 ? "eager" : "lazy"}
-          onLoad={() => setLoading(false)}
-          className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-110 ${loading ? 'opacity-0' : 'opacity-100'}`}
+          // 'eager' força o navegador a baixar AGORA, não depois.
+          loading="eager" 
+          fetchPriority={index < 4 ? "high" : "low"}
+          decoding="sync" 
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
       </div>
 
