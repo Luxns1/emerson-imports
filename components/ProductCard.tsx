@@ -14,12 +14,12 @@ export default function ProductCard({ product }: Props) {
     currency: 'BRL',
   });
 
-  // Mensagem automática para o WhatsApp
+  // Mensagem automática para o WhatsApp em português
   const mensagemZap = encodeURIComponent(
     `Olá Emerson! Vi o catálogo e tenho interesse no produto: ${product.nome} (${precoFormatado}).`
   );
   
-  // Link para o WhatsApp (Altere o número 5585... para o real do Emerson)
+  // Link para o WhatsApp (Altere o número para o real do Emerson)
   const linkZap = `https://wa.me/5585999999999?text=${mensagemZap}`;
 
   return (
@@ -27,8 +27,8 @@ export default function ProductCard({ product }: Props) {
       
       {/* Container da Imagem */}
       <div className="aspect-square w-full overflow-hidden bg-neutral-950 flex items-center justify-center relative">
-        {/* Overlay sutil para dar profundidade */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        {/* Overlay sutil para dar profundidade no hover */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         
         <img
           src={product.imagem}
@@ -40,20 +40,24 @@ export default function ProductCard({ product }: Props) {
 
       {/* Detalhes do Produto */}
       <div className="p-5 flex flex-col flex-grow">
-        <div className="flex items-center gap-2 mb-2">
-           <span className="w-2 h-2 rounded-full bg-[#b59410]"></span>
-           <span className="text-[10px] uppercase tracking-[0.2em] text-neutral-400 font-bold">
+        {/* Categoria com Detalhe em Ouro */}
+        <div className="flex items-center gap-2 mb-2.5">
+           <span className="w-1.5 h-1.5 rounded-full bg-[#b59410]"></span>
+           <span className="text-[10px] uppercase tracking-[0.3em] text-neutral-400 font-bold">
             {product.categoria}
           </span>
         </div>
 
+        {/* Nome do Produto - Força 1 linha */}
         <h3 className="text-sm font-semibold text-white group-hover:text-[#b59410] transition-colors line-clamp-1">
           {product.nome}
         </h3>
         
+        {/* Espaçador flexível */}
         <div className="flex-grow"></div>
 
-        <div className="mt-4 flex flex-col gap-4">
+        {/* Preço e Botão */}
+        <div className="mt-5 flex flex-col gap-4">
           <p className="text-xl font-extrabold text-white">
             {precoFormatado}
           </p>
@@ -62,7 +66,7 @@ export default function ProductCard({ product }: Props) {
             href={linkZap}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-full bg-white text-black py-3 rounded-xl text-[11px] font-black uppercase tracking-widest transition-all duration-300 hover:bg-[#b59410] hover:text-white active:scale-95"
+            className="flex items-center justify-center w-full bg-white text-black py-3 rounded-xl text-[11px] font-black uppercase tracking-widest transition-all duration-300 hover:bg-[#b59410] hover:text-white active:scale-95 shadow-md"
           >
             Falar com Vendedor
           </a>
